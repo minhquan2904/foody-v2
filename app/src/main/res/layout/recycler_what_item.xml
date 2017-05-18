@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/colorBackgroundDarker"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+        <ImageView
+            android:id="@+id/img_what_one_item"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/fdi1"/>
+
+        <TextView
+            android:id="@+id/txt_type_what_one_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="somwthing here"
+            android:textSize="14sp"
+            android:maxLength="20"
+            android:ellipsize="end"
+            />
+        <TextView
+            android:id="@+id/txt_name_what_one_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="something here"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+        <TextView
+            android:id="@+id/txt_address_what_one_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="something here"
+            android:textSize="8sp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBackgroundDarker"
+            />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_avatar_what_one_item"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ava0"
+                />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:id="@+id/txt_name_what_one_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SomeThing here"
+                    android:textStyle="bold"
+                    android:textSize="10sp"/>
+                <TextView
+                    android:id="@+id/txt_date_what_one_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10/102015"
+                    android:textSize="6sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

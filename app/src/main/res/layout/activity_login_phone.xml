@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="#eeefefef">
+    <TextView
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập số di dộng của bạn"/>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="315dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:paddingRight="3dp"
+            android:background="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+84"
+            />
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:background="#fff"
+            android:id="@+id/txt_Email"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:textColor="#000"/>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:text="Nhấn vào Tiếp để xác minh tài khoản bằng Account Kit của Facebook. Bạn không cần có tài khoản Facebook để sử dụng Account Kit. Chúng tôi có thể gửi SMS để xác minh số điện thoại của bạn. Bạn có thể chịu cước tin nhấn và dữ liệu. Tìm hiểu cách Facebook sử dụng thông tin của bạn"/>
+    <Button
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:text="Tiếp"
+        android:background="#cfbaba"
+        android:textColor="#c77676"
+        android:textAllCaps="false"/>
+</LinearLayout>

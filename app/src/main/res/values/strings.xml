@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Foody</string>
+    <string name="title_home">Home</string>
+
+    <!-- Botom Navigation View -->
+    <string name="str_nav_home">Home</string>
+    <string name="str_nav_notification">Notifications</string>
+    <string name="str_nav_collection">Collections</string>
+    <string name="str_nav_account">Account</string>
+    <string name="str_nav_search">Search</string>
+    <string name="str_appbar_logoDescription">Foody</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="button_appbar_where">Ở đâu</string>
+    <string name="button_appbar_what">Ăn gì</string>
+    <string name="text_appbar_action">Thao tác</string>
+    <string name="str_home_filter_button1">Mới nhất</string>
+    <string name="str_home_filter_button2">Danh mục</string>
+    <string name="str_home_filter_location">TP.HCM</string>
+    <string name="tmpdescrition">justImage</string>
+    <string name="str_deli_now">Đặt giao hàng</string>
+    <string name="str_opening">Đang mở cửa</string>
+    <string name="str_button_cancel">Huỷ</string>
+    <string name="str_function_error">Tính năng chưa hoàn thiện !</string>
+    <string name="str_select_city_label">Chọn Tỉnh/Thành phố</string>
+    <string name="str_error_no_content">Không có nội dung !</string>
+    <string name="str_user">Tài khoản</string>
+    <string name="str_login">Đăng nhập</string>
+    <string name="str_login_foody">Đăng nhập Foody</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

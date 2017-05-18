@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E53935</color>
+    <color name="colorPrimaryDark">#B71C1C</color>
+    <color name="colorAccent">#00B0FF</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="textColorMain">#606060</color>
+
+    <color name="colorBackground">#f0f0f0</color>
+    <color name="colorBackgroundDark">#ECECEC</color>
+    <color name="colorBackgroundDarker">#E4E4E4</color>
+    <color name="colorBackgroundDarkerr">#B7B7B7</color>
+
+    <color name="color_nav_icon">#424242</color>
+    <color name="colorGrey">#A0A0A0</color>
+    <color name="colorSuccess">#4CAF50</color>
+
+    <color name="color_btn_table_now">#fff37a34</color>
+    <color name="color_btn_top">#55aaaaaa</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorFacebook">#3b5998</color>
+</resources>

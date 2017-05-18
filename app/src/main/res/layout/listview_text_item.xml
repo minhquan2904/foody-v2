@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="16dp"
+    android:paddingLeft="16dp"
+    android:paddingEnd="0dp"
+    android:paddingRight="0dp"
+    android:background="@drawable/bg_text_listview_city"
+    android:gravity="center_vertical"
+    android:text="TP.HCM"
+    android:textColor="@drawable/color_text_listview_city_item"
+    android:textSize="@dimen/text_normal" />

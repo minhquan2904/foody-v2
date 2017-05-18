@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@color/colorWhite"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <TextView
+            android:id="@+id/item_text_avgRating"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_text_circle"
+            android:text="8.0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/item_text_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="label here"
+                android:textStyle="bold"
+                android:textColor="@color/textColorMain" />
+            <TextView
+                android:id="@+id/item_text_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="address here"
+                android:textColor="@color/textColorMain" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <VideoView
+        android:id="@+id/item_video"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/tmpdescrition" />
+    <LinearLayout
+        android:id="@+id/item_button_oderNNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_button_delivery_now"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_delivery_man"
+            android:contentDescription="@string/tmpdescrition" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text="@string/str_deli_now"
+            android:textColor="@color/colorWhite"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/colorWhite"
+        android:padding="8dp"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_home_review"
+                android:tint="@color/colorGrey"
+                android:contentDescription="@string/tmpdescrition" />
+            <TextView
+                android:id="@+id/item_text_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:paddingStart="4dp"
+                android:paddingRight="4dp"
+                android:paddingEnd="4dp"
+                android:gravity="center_vertical"
+                android:background="@color/colorWhite"
+                android:text="362"
+                android:textColor="@color/colorGrey" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_camera_white"
+                android:tint="@color/colorGrey"
+                android:contentDescription="@string/tmpdescrition" />
+            <TextView
+                android:id="@+id/item_text_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:paddingStart="4dp"
+                android:paddingRight="4dp"
+                android:paddingEnd="4dp"
+                android:gravity="center_vertical"
+                android:background="@color/colorWhite"
+                android:text="124"
+                android:textColor="@color/colorGrey" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/item_text_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:paddingStart="4dp"
+                android:paddingRight="4dp"
+                android:paddingEnd="4dp"
+                android:gravity="center_vertical"
+                android:background="@color/colorWhite"
+                android:text="@string/str_opening"
+                android:textColor="@color/colorGrey" />
+            <ImageView
+                android:id="@+id/item_image_status"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icon_dotview"
+                android:tint="@color/colorGrey"
+                android:contentDescription="@string/tmpdescrition" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
