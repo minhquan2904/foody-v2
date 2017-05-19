@@ -51,7 +51,7 @@ public class ModelCategory {
 
                 JSONObject object = array.getJSONObject(i);
 
-                Log.d("KT!", object.toString());
+               // Log.d("KT!", object.toString());
 
                 Category category = new Category();
 

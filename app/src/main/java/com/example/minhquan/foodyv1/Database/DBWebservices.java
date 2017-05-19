@@ -45,7 +45,7 @@ public class DBWebservices extends AsyncTask<Void, Void, String> {
             // Construct the URL for the OpenWeatherMap query
             // Possible parameters are avaiable at OWM's forecast API page, at
             // http://openweathermap.org/API#forecast
-            URL url = new URL("http://192.168.10.63:8080/" + this.url);
+            URL url = new URL("http://192.168.137.1:8080/" + this.url);
 
             // Create the request to OpenWeatherMap, and open the connection
             urlConnection = (HttpURLConnection) url.openConnection();

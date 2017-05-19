@@ -8,7 +8,34 @@ public class WhatItem {
 
     private Integer id,restaurantId,categoryId, cityID, districtId, streetId,typeId;
 
-    private String address,name,img,type;
+    private String address,name,img,type,userimg,username,date;
+
+    public WhatItem() {
+    }
+
+    public String getUserimg() {
+        return userimg;
+    }
+
+    public void setUserimg(String userimg) {
+        this.userimg = userimg;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public Integer getId() {
         return id;

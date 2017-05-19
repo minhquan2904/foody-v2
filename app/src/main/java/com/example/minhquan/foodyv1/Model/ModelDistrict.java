@@ -6,11 +6,17 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.minhquan.foodyv1.Database.DBWebservices;
 import com.example.minhquan.foodyv1.Object.District;
 import com.example.minhquan.foodyv1.Object.Street;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by MinhQuan on 4/18/2017.
@@ -54,7 +60,85 @@ public class ModelDistrict  {
                 COLUMN_ID+" = ? ",
                 new String[] { Integer.toString(id) });
     }
+    DBWebservices dbWebservices;
+    public ModelDistrict(){}
+    public ArrayList<District> WSgetDistrictList(int cityID) {
+        ArrayList<District> list = new ArrayList<>();
+        dbWebservices = new DBWebservices("district?cityid="+cityID+"");
+        dbWebservices.execute();
 
+        try {
+            String data = dbWebservices.get();
+            JSONArray array = new JSONArray(data);
+            int count = array.length();
+            for(int i=0;i<count;i++){
+                JSONObject object = array.getJSONObject(i);
+                District district = new District();
+
+                district.setId(object.getInt("id"));
+                district.setName(object.getString("name"));
+                JSONArray arrayStr = object.getJSONArray("streetList");
+                List<Street> streets = new ArrayList<>();
+                int count2 = arrayStr.length();
+                for (int j = 0 ; j< count2 ; j++)
+                {
+                    JSONObject object1 = arrayStr.getJSONObject(j);
+                    Street street = new Street();
+                    street.setId(object1.getInt("id"));
+                    street.setName(object1.getString("name"));
+                    street.setCityID(object1.getInt("cityID"));
+
+                    streets.add(street);
+                }
+                district.setStreetList(streets);
+
+
+                list.add(district);
+
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return list;
+
+    }
+
+    public List<Street> WSgetStreetByDistrictID(int districtID)
+    {
+        dbWebservices = new DBWebservices("street?districtid="+districtID+"");
+        List<Street> list = new ArrayList<>();
+        dbWebservices.execute();
+
+        try {
+            String data = dbWebservices.get();
+            JSONArray array = new JSONArray(data);
+            int count = array.length();
+            for(int i=0;i<count;i++){
+                JSONObject object = array.getJSONObject(i);
+                Street street = new Street();
+
+                street.setId(object.getInt("id"));
+                street.setName(object.getString("name"));
+                street.setCityID(object.getInt("cityID"));
+
+                list.add(street);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
     public ArrayList<District> getDistrictList(int cityID) {
         ArrayList<District> list = new ArrayList<>();
 

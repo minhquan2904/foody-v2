@@ -161,7 +161,7 @@ public class RecyclerWhatAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 if (!whatItem.getImg().equals("")){
                    /* int imageResource = mContext.getResources().getIdentifier("fdi"+whatItem.getImg(), "drawable", mContext.getPackageName());
                     viewHolderItem.imgOneItem.setImageResource(imageResource);*/
-                    Picasso.with(mContext).load("https://media.foody.vn/usr/g16/154104/avt/c60/foody-avatar-721-636284560777357603.jpg").fit().into(((ViewHolderItem) viewHolder).imgOneItem, new Callback() {
+                    Picasso.with(mContext).load(whatItem.getImg()).fit().into(((ViewHolderItem) viewHolder).imgOneItem, new Callback() {
                         @Override
                         public void onSuccess() {
 

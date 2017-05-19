@@ -4,10 +4,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.minhquan.foodyv1.Database.DBWebservices;
 import com.example.minhquan.foodyv1.Object.WhatItem;
 import com.example.minhquan.foodyv1.Object.WhereItem;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by MinhQuan on 4/20/2017.
@@ -90,5 +96,80 @@ public class ModelWhatItem{
             }
             return getItemList(query);
         }
+    private DBWebservices dbWebservices;
+    public ModelWhatItem(){};
+    public ArrayList<WhatItem> WSgetItemList(String keyword)
+    {
+        ArrayList<WhatItem> list = new ArrayList<>();
+        dbWebservices= new DBWebservices("itemwhat"+keyword+"");
+        dbWebservices.execute();
 
+        try {
+            String data = dbWebservices.get();
+            JSONArray array = new JSONArray(data);
+            int count = array.length();
+            for(int i=0;i<count;i++)
+            {
+                JSONObject object = array.getJSONObject(i);
+                WhatItem item = new WhatItem();
+                item.setId(object.getInt("id"));
+                item.setName(object.getString("foodName"));
+                item.setImg(object.getString("image"));
+                item.setAddress(object.getString("address"));
+                item.setType(object.getString("locationName"));
+                item.setUserimg(object.getString("userimg"));
+                item.setUsername(object.getString("username"));
+                item.setDate(object.getString("date"));
+
+                list.add(item);
+
+
+
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+    public ArrayList<WhatItem> WSfindItemsByFields(int cityId, int districtId, int streetId, int categoryId) {
+        String key;
+        if (categoryId <= 1){
+            // no category (all)
+            if (streetId > 0) {
+                key = "?streetid="+streetId+"";
+            }
+            else if (districtId > 0) {
+                // tim theo quan/huyen
+                key = "?districtid="+districtId+"";
+            }
+            else if (cityId > 0) {
+                key = "?cityid="+cityId+"";
+            }
+            else
+                key="";   // lay het
+        }
+        else {
+            // thim theo category
+            if (streetId > 0) {
+                // tim theo duong
+                key="?categoryid="+categoryId+"&streetid="+streetId+"";
+            }
+            else if (districtId > 0) {
+                // tim theo quan/huyen
+                key="?categoryid="+categoryId+"&districtid="+districtId+"";
+            }
+            else if (cityId > 0) {
+                key="?categoryid="+categoryId+"&cityid="+cityId+"";
+            }
+            else
+                key="?categoryid="+categoryId+"";
+        }
+        return WSgetItemList(key);
+    }
 }

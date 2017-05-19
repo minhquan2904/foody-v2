@@ -208,8 +208,8 @@ public class FragmentWhat extends Fragment {
         changeCategory(0);
 
         // Tab 3: Danh sach quan/huyen, duong
-        ModelDistrict districtDB = new ModelDistrict(this.database);
-        ArrayList<District> districtList = districtDB.getDistrictList(selectedCityId);
+        ModelDistrict districtDB = new ModelDistrict();
+        ArrayList<District> districtList = districtDB.WSgetDistrictList(selectedCityId);
         ListViewDistrictAdapter listViewDistrictAdapter = new ListViewDistrictAdapter(getContext(),districtList);
         listViewDistrict.setAdapter(listViewDistrictAdapter);
         changeCity(selectedCityId,selectedCityName);
@@ -318,8 +318,8 @@ public class FragmentWhat extends Fragment {
 
     // update du lieu recycler view (Tab 0)
     private void updateWhereItemListData() {
-        ModelWhatItem itemDB = new ModelWhatItem(database);
-        ArrayList<WhatItem> itemList = itemDB.findItemsByFields(selectedCityId,selectedDistrictId,selectedStreetId,selectedCategoryId);
+        ModelWhatItem itemDB = new ModelWhatItem();
+        ArrayList<WhatItem> itemList = itemDB.WSfindItemsByFields(selectedCityId,selectedDistrictId,selectedStreetId,selectedCategoryId);
         final RecyclerWhatAdapter recyclerViewAdapter = new RecyclerWhatAdapter(getContext(),itemList,gridViewMenuAdapter,viewPagerSlideAdapter);
       //  recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

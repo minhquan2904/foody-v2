@@ -2,7 +2,9 @@ package com.example.minhquan.foodyv1.View.Fragment;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -130,6 +132,7 @@ public class FragmentWhere extends Fragment {
 
 
     // khoi tao layout
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void layoutInit (View view) {
         database = MainActivity.database;
 
@@ -181,6 +184,8 @@ public class FragmentWhere extends Fragment {
         tabHost.setCurrentTab(0);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
     }
 
     // data
@@ -205,8 +210,8 @@ public class FragmentWhere extends Fragment {
         changeCategory(0);
 
         // Tab 3: Danh sach quan/huyen, duong
-        ModelDistrict districtDB = new ModelDistrict(this.database);
-        ArrayList<District> districtList = districtDB.getDistrictList(selectedCityId);
+        ModelDistrict districtDB = new ModelDistrict();
+        ArrayList<District> districtList = districtDB.WSgetDistrictList(selectedCityId);
         ListViewDistrictAdapter listViewDistrictAdapter = new ListViewDistrictAdapter(getContext(),districtList);
         listViewDistrict.setAdapter(listViewDistrictAdapter);
         changeCity(selectedCityId,selectedCityName);
@@ -316,7 +321,7 @@ public class FragmentWhere extends Fragment {
     // update du lieu recycler view (Tab 0)
     private void updateWhereItemListData() {
         ModelWhereItem itemDB = new ModelWhereItem(database);
-        ArrayList<WhereItem> itemList = itemDB.findItemsByFields(selectedCityId,selectedDistrictId,selectedStreetId,selectedCategoryId);
+        ArrayList<WhereItem> itemList = itemDB.WSfindItemsByFields(selectedCityId,selectedDistrictId,selectedStreetId,selectedCategoryId);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),itemList,gridViewMenuAdapter,viewPagerSlideAdapter);
         recyclerView.setAdapter(recyclerViewAdapter);
 

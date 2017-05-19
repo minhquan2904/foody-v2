@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.minhquan.foodyv1.Object.Category;
 import com.example.minhquan.foodyv1.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -69,13 +70,13 @@ public class ListViewCategoryAdapter extends BaseAdapter {
         TextView textView = (TextView) itemView.findViewById(R.id.item_text);
         ImageView check = (ImageView) itemView.findViewById(R.id.item_check);
 
-        if (currCategory.getImage() == null)
+        if (currCategory.getImage() == null) {
+            Log.d("Texddt", "NULL");
             imageView.setVisibility(GONE);
+        }
         else {
-            int imageResource = mContext.getResources().getIdentifier(currCategory.getImage(), "drawable", mContext.getPackageName());
-            imageView.setImageResource(imageResource);
-
-            Log.d("img imageResource ",""+currCategory.getImage()+"" );
+            Log.d("Text",currCategory.getImage());
+            Picasso.with(mContext).load(currCategory.getImage()).fit().centerCrop().into(imageView);
             imageView.setVisibility(VISIBLE);
         }
         textView.setText(currCategory.getName());

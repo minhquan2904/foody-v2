@@ -18,6 +18,8 @@ import android.widget.VideoView;
 import com.example.minhquan.foodyv1.Custom.ExpandableHeightGridView;
 import com.example.minhquan.foodyv1.Object.WhereItem;
 import com.example.minhquan.foodyv1.R;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -159,8 +161,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 viewHolderItem.textViewAddress.setText(whereItem.getAddress());
                 // TODO: xu li video
                 if (!whereItem.getImg().equals("")){
-                    int imageResource = mContext.getResources().getIdentifier("fdi"+whereItem.getImg(), "drawable", mContext.getPackageName());
-                    viewHolderItem.imageView.setImageResource(imageResource);
+                    Picasso.with(mContext).load(whereItem.getImg()).fit().into(((RecyclerViewAdapter.ViewHolderItem) viewHolder).imageView, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            Toast.makeText(mContext,"Load success",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onError() {
+                            Toast.makeText(mContext,"Can't load image",Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
                 else {
                     viewHolderItem.imageView.setImageResource(R.drawable.fdi_null);
