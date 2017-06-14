@@ -63,7 +63,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:padding="8dp"
+        android:padding="4dp"
+
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="@drawable/bg_button_delivery_now"
@@ -75,8 +76,10 @@
             android:contentDescription="@string/tmpdescrition" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
+            android:layout_height="20dp"
             android:text="@string/str_deli_now"
+            android:paddingBottom="4dp"
+            android:layout_marginBottom="4dp"
             android:textColor="@color/colorWhite"/>
     </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.example.minhquan.foodyv1.View;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,6 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
     LinearLayout ln_edit_profile;
     TextView txtNameLogin;
     LinearLayout lnMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
 //                startActivity(myIntent);
 //            }
 //        });
+
         lnLogin = (LinearLayout) findViewById(R.id.lnLogin);
         ln_edit_profile = (LinearLayout) findViewById(R.id.ln_edit_profile);
 
@@ -46,6 +49,13 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), LoginActivity.class);
                 startActivityForResult(myIntent, 0);
+            }
+        });
+        ln_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), EditAccountActivity.class);
+                startActivity(myIntent);
             }
         });
 

@@ -180,6 +180,9 @@ public class RecyclerWhatAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 viewHolderItem.textViewName.setText(whatItem.getName());
                 viewHolderItem.textViewAddress.setText(whatItem.getAddress());
                 viewHolderItem.textViewType.setText(whatItem.getType());
+                viewHolderItem.txt_date_what_one_review.setText(whatItem.getDate());
+                viewHolderItem.txt_name_what_one_review.setText(whatItem.getUsername());
+                Picasso.with(mContext).load(whatItem.getUserimg()).fit().into(((ViewHolderItem) viewHolder).img_avatar_what_one_item);
                 break;
         }
     }
@@ -213,10 +216,11 @@ public class RecyclerWhatAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 //        TextView textViewStatus;
 //        ImageView imageViewStatus;
 
-        ImageView imgOneItem;
+        ImageView imgOneItem,img_avatar_what_one_item;
         TextView textViewType;
         TextView textViewName;
-        TextView textViewAddress;
+        TextView textViewAddress,txt_name_what_one_review,txt_date_what_one_review;
+
 
 
 
@@ -229,7 +233,9 @@ public class RecyclerWhatAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             textViewType = (TextView) v.findViewById(R.id.txt_type_what_one_item);
             textViewName = (TextView) v.findViewById(R.id.txt_name_what_one_item);
-
+            img_avatar_what_one_item = (ImageView) v.findViewById(R.id.img_avatar_what_one_item);
+            txt_name_what_one_review = (TextView) v.findViewById(R.id.txt_name_what_one_review);
+            txt_date_what_one_review = (TextView) v.findViewById(R.id.txt_date_what_one_review);
         }
     }
 
